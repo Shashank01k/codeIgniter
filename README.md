@@ -35,6 +35,15 @@ Below are screenshots showcasing various aspects of the CRUD project:
 5. Seeder
    ![Seeder](screenshots/seeder.png)
 
+### Screenshots
+
+- [Link 1](https://example.com/screenshot1)
+- [Link 2](https://example.com/screenshot2)
+- [Link 3](https://example.com/screenshot3)
+- [Link 4](https://example.com/screenshot4)
+- [Link 5](https://example.com/screenshot5)
+
+
 Feel free to click on each screenshot to view it in full size.
 
 
