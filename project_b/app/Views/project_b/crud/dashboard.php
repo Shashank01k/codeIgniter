@@ -91,12 +91,11 @@
             </table>
             <?= $pager->makeLinks($page,$perPage,$total) ?>
             <!-- </?= $page->links() ?> -->
-        <?php else: echo "<h4><center> No Data Found 😐</center> </h4>"; endif;?>        
-    </div>
+            <?php else: echo "<h4><center> No Data Found 😐</center> </h4>"; endif;?>        
+        </div>
+        <?php include "project_b/assets/layouts/footer.php"?>
 </body>
-
     <script>
-
         function selectAllUsers() {
             var mainCheckbox = document.getElementById('main_checkbox');
             var checkboxes = document.querySelectorAll('input[name="selected_users[]"]');
@@ -129,28 +128,6 @@
             mainCheckbox.checked = (checkedCount === checkboxes.length);
         }
 
-        // function selectAllUsers() {
-        //     var checkboxes = document.querySelectorAll('input[name="selected_users[]"]');
-        //     var mainCheckbox = document.getElementById('main_checkbox');
-        //     checkboxes.forEach(function(checkbox) {
-        //         checkbox.checked = mainCheckbox.checked;
-        //     });
-        // }
-        // function selectAllUsers() {
-        // var mainCheckbox = document.getElementById('main_checkbox');
-        // var checkboxes = document.querySelectorAll('input[name="selected_users[]"]');
-        
-        // // Check/uncheck main checkbox based on individual checkboxes
-        // mainCheckbox.checked = true; // Assume all checkboxes are checked initially
-        // checkboxes.forEach(function(checkbox) {
-        //     if (!checkbox.checked) {
-        //         mainCheckbox.checked = false; // Uncheck main checkbox if any checkbox is unchecked
-        //     }
-        // });
-    // }
-    </script>
-
-    <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();   
         });
@@ -179,5 +156,4 @@
             // alert("Copied the text: " + titleText);
         }
     </script>
-    <?php include "project_b/assets/layouts/footer.php"?>
 </html>
