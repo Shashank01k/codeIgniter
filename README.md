@@ -16,6 +16,28 @@
 - [ ] Filter
 - [x] Privacy & Terms
 
+### Screenshots
+
+Below are screenshots showcasing various aspects of the CRUD project:
+
+1. Login Page
+   ![Login Page](screenshots/login.png)
+
+2. Dashboard
+   ![Dashboard](screenshots/dashboard.png)
+
+3. User Registration
+   ![User Registration](screenshots/registration.png)
+
+4. Data Editing
+   ![Data Editing](screenshots/edit.png)
+
+5. Seeder
+   ![Seeder](screenshots/seeder.png)
+
+Feel free to click on each screenshot to view it in full size.
+
+
 # Requirements
 
   CodeIgniter version: v4.5.1
@@ -32,7 +54,7 @@
   
   Configure your database connection in app/Config/Database.php with your MySQL credentials.
   
-  Run the following commands to create necessary files and migrate the database:
+  Run the following commands to create the necessary files and migrate the database:
   
   
 # bash
@@ -46,7 +68,7 @@
     php spark make:controller web/v1/UserDeleteController
   
 
-  # NOTE: Repeat above command for other necessary controllers
+  # NOTE: Repeat the above command for other necessary controllers
 
     php spark make:migration create_users_table --resources
   
