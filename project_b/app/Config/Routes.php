@@ -32,6 +32,7 @@ $routes->match(['get','post'], '/register',$namespaceWebV1.'\UserRegisterControl
 $routes->match(['get','post'],'/dashboard',$namespaceWebV1.'\UserDashboardController::dashboard',['filter' => 'auth']);
 $routes->match(['get','post'], '/update/(:any)',$namespaceWebV1.'\UserUpdateController::update/$1',['filter' => 'auth']);
 $routes->match(['get','post'], '/delete/(:any)',$namespaceWebV1.'\UserDeleteController::delete/$1',['filter' => 'auth']);
+$routes->match(['get','post'], '/delete/all/(:any)',$namespaceWebV1.'\UserDeleteController::deleteAll',['filter' => 'auth']);
 $routes->match(['get','post'], '/terms',$namespaceWebV1.'\UserDashboardController::terms',['filter' => 'auth']);
 $routes->match(['get','post'], '/seeder',$namespaceWebV1.'\UserDashboardController::inserDummyData',['filter' => 'auth']);
 

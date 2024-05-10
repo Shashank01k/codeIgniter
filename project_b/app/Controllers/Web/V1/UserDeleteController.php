@@ -26,4 +26,14 @@ class UserDeleteController extends BaseController
         //     return redirect()->to('dashboard');
         // }
     }
+    public $output;
+    public function deleteAll($userData)
+    {
+        //
+        $response = array(
+            'message' => 'deleteAll method executed successfully'
+        );
+        // Return JSON response
+        return json_encode($response);//TODO:this function is not done
+    }
 }

@@ -1,7 +1,3 @@
-<?php 
-// print_R($flashMessage); 
-// die;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +6,24 @@
 </head>
 <body>
     <h4>Welcome To User Dashboard</h4>
-    <!-- <div class="container martop">
-        <div class="col-md-6 center_div">
-            <p>Welcome User | <a href="</?php echo base_url()?>/logout">Logout</a></p>
-        </div>
-    </div> -->
+
     <div class="container">
         <?php if($total > 0):?>
+
             <table class="table">
                 <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" name="main_checkbox" id="main_checkbox" onclick="selectAllUsers()">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Actions
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item" onclick="selects()">SELECT</button>
+                                <button class="dropdown-item" onclick="deSelect()">DESELECT</button>
+                                <button class="dropdown-item" onclick="deleteAllRows()">DELETE</button>
+                            </div>
+                        </div>
                     </th>
                     <th>Sr.No.</th>
                     <th>USER NAME</th>
@@ -36,8 +38,6 @@
                 </thead>
                 <tbody>
                     <?php 
-                        // print_R($data); die;
-                        $rowId = 1;
                         foreach($userDataArray as $userDataKey => $userDataValue) {
                             // print_R($userDataValue); die;
                             $userId = $userDataValue['u_id'];
@@ -56,7 +56,7 @@
                             <tr>
                                 <td>
                                     <!-- Checkbox for selecting individual user -->
-                                    <input type="checkbox" name="selected_users[]" value="<?php echo $userId; ?>">
+                                    <input type="checkbox" name="chkRowId" value="<?php echo $userId; ?>">
                                 </td>
                                 <td><?php echo $userId ?></td>
                                 <td>
@@ -83,77 +83,17 @@
                                 </td>
                             </tr>
                             <?php
-                            $rowId++;
                         }
-                        ?>
-                        <div id="messageDiv"></div> <!-- The div to display messages -->
+                    ?>
                 </tbody>
             </table>
             <?= $pager->makeLinks($page,$perPage,$total) ?>
             <!-- </?= $page->links() ?> -->
+            
             <?php else: echo "<h4><center> No Data Found 😐</center> </h4>"; endif;?>        
         </div>
+
         <?php include "project_b/assets/layouts/footer.php"?>
 </body>
-    <script>
-        function selectAllUsers() {
-            var mainCheckbox = document.getElementById('main_checkbox');
-            var checkboxes = document.querySelectorAll('input[name="selected_users[]"]');
-            var checkedCount = 0;
-            
-            // Count the number of checked checkboxes
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    checkedCount++;
-                }
-            });
-
-            // Update the state of the main checkbox based on checkedCount
-            mainCheckbox.checked = (checkedCount === checkboxes.length);
-        }
-
-        function updateMainCheckbox() {
-            var mainCheckbox = document.getElementById('main_checkbox');
-            var checkboxes = document.querySelectorAll('input[name="selected_users[]"]');
-            var checkedCount = 0;
-            
-            // Count the number of checked checkboxes
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    checkedCount++;
-                }
-            });
-
-            // Update the state of the main checkbox based on checkedCount
-            mainCheckbox.checked = (checkedCount === checkboxes.length);
-        }
-
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-        
-        // var titleText = '';
-        function copyUserNameValue(titleText) {
-            console.log(titleText)
-            // Create a temporary input element
-            var input = document.createElement("input");
-            input.setAttribute("value", titleText);
-            document.body.appendChild(input);
-
-            // Select the text inside the input element
-            input.select();
-
-            // Copy the selected text
-            document.execCommand("copy");
-
-            // Remove the temporary input element
-            document.body.removeChild(input);
-
-            // Alert the user (optional)
-            var messageDiv = document.getElementById("messageDiv");
-            messageDiv.textContent = "Copied: " + titleText;
-
-            // alert("Copied the text: " + titleText);
-        }
-    </script>
+    <script src="<?php echo 'project_b/assets/js/dashboard.js'; ?>" ></script>
 </html>
