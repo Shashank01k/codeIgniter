@@ -22,7 +22,6 @@
 
 Below are screenshots showcasing various aspects of the CRUD project:
 
-### Screenshots
 
 - [Link 1](https://snipboard.io/XiV7yA.jpg)
 - [Link 2](https://snipboard.io/1NHQFu.jpg)
