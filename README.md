@@ -5,9 +5,9 @@
   
   ### CRUD System Implementation Status
   
-    #### Functionality
+    # Functionality
     
-- [x] Login
+- <span style="color:green">[x] Login</span>
 - [x] Logout
 - [x] Singal Delete
 - [x] Edit
