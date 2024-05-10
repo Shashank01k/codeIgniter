@@ -1,7 +1,20 @@
 # Project_b CRUD README
 
 # Overview
-  ## Project_b is a CRUD (Create, Read, Update, Delete) system developed using CodeIgniter framework with MySQL database. It provides functionalities for user registration, login, dashboard access, and data management.
+  ## Project_b is a CRUD (Create, Read, Update, Delete) system developed using the CodeIgniter framework with MySQL database. It provides functionalities for user registration, login, dashboard access, and data management.
+  
+  ### CRUD System Implementation Status
+  
+    #### Functionality
+    
+- [x] Login
+- [x] Logout
+- [x] Singal Delete
+- [x] Edit
+- [x] Seeder
+- [ ] All Delete
+- [ ] Filter
+- [x] Privacy & Terms
 
 # Requirements
 
