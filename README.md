@@ -2,6 +2,8 @@
 
 # Overview
   ## Project_b is a CRUD (Create, Read, Update, Delete) system developed using the CodeIgniter framework with MySQL database. It provides functionalities for user registration, login, dashboard access, and data management.
+
+  ## Note:  When inserting seeder data for login, use a password remember token as the password.
   
   ### CRUD System Implementation Status
   
@@ -20,28 +22,18 @@
 
 Below are screenshots showcasing various aspects of the CRUD project:
 
-1. Login Page
-   ![Login Page](screenshots/login.png)
-
-2. Dashboard
-   ![Dashboard](screenshots/dashboard.png)
-
-3. User Registration
-   ![User Registration](screenshots/registration.png)
-
-4. Data Editing
-   ![Data Editing](screenshots/edit.png)
-
-5. Seeder
-   ![Seeder](screenshots/seeder.png)
-
 ### Screenshots
 
-- [Link 1](https://example.com/screenshot1)
-- [Link 2](https://example.com/screenshot2)
-- [Link 3](https://example.com/screenshot3)
-- [Link 4](https://example.com/screenshot4)
-- [Link 5](https://example.com/screenshot5)
+- [Link 1](https://snipboard.io/XiV7yA.jpg)
+- [Link 2](https://snipboard.io/1NHQFu.jpg)
+- [Link 3](https://snipboard.io/rq7SFN.jpg)
+- [Link 4](https://snipboard.io/mP2v7p.jpg)
+- [Link 5](https://snipboard.io/aSLVxv.jpg)
+- [Link 6](https://snipboard.io/9Vpg3F.jpg)
+- [Link 7](https://snipboard.io/MWkAJ6.jpg)
+- [Link 8](https://snipboard.io/JQObIP.jpg)
+- [Link 9](https://snipboard.io/EGCusd.jpg)
+- [Link 10](https://snipboard.io/lz93jE.jpg)
 
 
 Feel free to click on each screenshot to view it in full size.
