@@ -37,9 +37,9 @@
   
 # bash
 
-  php spark make:model tblUsersModel
+    php spark make:model tblUsersModel
   
-  php spark make:seeder UsersModelSeeder
+      php spark make:seeder UsersModelSeeder
   
   php spark make:model states
   
