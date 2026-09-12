@@ -3,6 +3,26 @@
 <head>
     <?php include "project_b/assets/layouts/header.php"?>
     <title>Dashboard</title>
+
+    <style>
+        .pagination {
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 4px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #337ab7;
+            color: white;
+            border-color: #337ab7;
+        }
+    </style>
 </head>
 <body>
     <h4>Welcome To User Dashboard</h4>
@@ -39,12 +59,11 @@
                 <tbody>
                     <?php 
                         foreach($userDataArray as $userDataKey => $userDataValue) {
-                            // print_R($userDataValue); die;
-                            $userId = $userDataValue['u_id'];
-                            $tempUserName = $userDataValue['user_name'];
-                            $userName = $userDataValue['user_name'];
-                            $tempStateName = $userDataValue['state_name'];
-                            $stateName = $userDataValue['state_name'];
+                            $userId = $userDataValue->u_id;
+                            $tempUserName = $userDataValue->user_name;
+                            $userName = $userDataValue->user_name;
+                            $tempStateName = $userDataValue->name;
+                            $stateName = $userDataValue->name;
 
                             if(strlen($userName) >= 10){
                                 $userName = substr($userName,0,10).'...';
@@ -64,20 +83,20 @@
                                         <?php echo ucwords($userName); ?> 
                                     </div>
                                 </td>
-                                <td><?php echo $userDataValue['phone']; ?></td>
-                                <td><?php echo $userDataValue['email']; ?></td>
-                                <td><?php echo ucfirst($userDataValue['gender']); ?></td>
+                                <td><?php echo $userDataValue->phone; ?></td>
+                                <td><?php echo $userDataValue->email; ?></td>
+                                <td><?php echo ucfirst($userDataValue->gender); ?></td>
                                 <td>
                                     <div data-toggle="tooltip" title="<?= $tempStateName ?>">
                                         <?php echo $stateName; ?> 
                                     </div>
                                 </td>
-                                <td><?php echo date('d F Y', strtotime($userDataValue['created_at'])); ?></td>
+                                <td><?php echo date('d F Y', strtotime($userDataValue->created_at)); ?></td>
                                 <td>
-                                    <a href="<?php echo base_url() ?>update/<?php echo $userDataValue['u_id'];?>">
+                                    <a href="<?php echo base_url() ?>update/<?php echo $userDataValue->u_id;?>">
                                         <button type="submit" class="btn btn-primary">EDIT</button>
                                     </a>
-                                    <a onclick="return confirm('Are you sure want to move to trash?')" href="<?php echo base_url() ?>delete/<?php echo $userDataValue['u_id'];?>">
+                                    <a onclick="return confirm('Are you sure want to move to trash?')" href="<?php echo base_url() ?>delete/<?php echo $userDataValue->u_id;?>">
                                         <button type="submit" class="btn btn-danger">DELETE</button>
                                     </a>
                                 </td>
@@ -87,8 +106,49 @@
                     ?>
                 </tbody>
             </table>
-            <?= $pager->makeLinks($page,$perPage,$total) ?>
-            <!-- </?= $page->links() ?> -->
+           <h3>Total Users: <?= $total ?></h3>
+
+            <?php
+                $totalPages = (int) ceil($total / $perPage);
+            ?>
+
+            <div class="pagination">
+
+                <!-- Previous -->
+                <?php if ($page > 1): ?>
+                    <a href="<?= base_url('dashboard?page=' . ($page - 1)) ?>">
+                        Previous
+                    </a>
+                <?php endif; ?>
+
+
+                <!-- Page Numbers -->
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+
+                    <a href="<?= base_url('dashboard?page=' . $i) ?>"
+                    class="<?= ($i == $page) ? 'active' : '' ?>">
+                        <?= $i ?>
+                    </a>
+
+                <?php endfor; ?>
+
+
+                <!-- Next -->
+                <?php if ($page < $totalPages): ?>
+                    <a href="<?= base_url('dashboard?page=' . ($page + 1)) ?>">
+                        Next
+                    </a>
+                <?php endif; ?>
+
+
+                <!-- Last -->
+                <?php if ($page < $totalPages): ?>
+                    <a href="<?= base_url('dashboard?page=' . $totalPages) ?>">
+                        Last
+                    </a>
+                <?php endif; ?>
+
+            </div>
             
             <?php else: echo "<h4><center> No Data Found 😐</center> </h4>"; endif;?>        
         </div>

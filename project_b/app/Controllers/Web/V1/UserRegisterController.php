@@ -117,14 +117,14 @@ class UserRegisterController extends BaseController
         helper(['form']);
         if($this->request->getMethod() == 'POST'){
 
-            // echo "vkjkbo"; die; 
-            // $this->form_validation->set_rules('firstname', 'First Name', 'required|regex_match[/^[a-zA-Z .]+$/]|min_length[3]|max_length[50]');
+            //TODO:check validation
 
             $rules = [
                 'firstname' => 'required|regex_match[/^[a-zA-Z .]+$/]|min_length[3]|max_length[50]',
                 'lastname' => 'required|regex_match[/^[a-zA-Z .]+$/]|min_length[2]|max_length[50]',
                 'email' => 'required|min_length[8]|max_length[100]|valid_email|is_unique[users.email]',
                 'password' => 'required|regex_match[/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()-_+=])[A-Za-z\d!@#$%^&*()-_+=]{8,}$/]|min_length[8]|max_length[50]',
+                'password' => 'required',
                 'confirmpassword' => 'matches[password]',
                 'phone' => 'required|trim|required|numeric|min_length[10]|max_length[10]',
                 'gender' => 'required',

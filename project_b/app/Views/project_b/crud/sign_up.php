@@ -123,8 +123,7 @@
                                 <option value="">Select State</option>
                                 <?php
                                     foreach($statesArrayData as $statesArrayKey => $statesArrayValue){
-                                        // print_R($statesArrayValue); die;
-                                        $stateName = $statesArrayValue['state_name'];
+                                        $stateName = $statesArrayValue['name'];
                                         $stateId = $statesArrayValue['id'];
                                         ?>
                                             <option value= "<?= $stateId ?>" <?= set_select('state', $stateId, (set_value('state') == $stateId)) ?>><?php echo $stateName;?> </option>
@@ -165,14 +164,6 @@
                             <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
                             <div class="border-bottom w-100 mr-5"></div>
                         </div>
-
-                        <!-- Social Login -->
-                        <!-- <div class="form-group col-lg-12 mx-auto">
-                            <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
-                                <i class="fa fa-facebook-f mr-2"></i>
-                                <span class="font-weight-bold">Continue with Facebook</span>
-                            </a>
-                        </div> -->
 
                         <!-- Already Registered -->
                         <div class="text-center w-100">
